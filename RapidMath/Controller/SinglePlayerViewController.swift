@@ -27,8 +27,9 @@ class SinglePlayerViewController: UIViewController {
     var sign = "+"
     var counter = 5
     var timer = Timer()
-    let generator = UIImpactFeedbackGenerator(style: .medium)
     
+    let generator = UIImpactFeedbackGenerator(style: .medium)
+    let generator2 = UIImpactFeedbackGenerator(style: .heavy)
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -58,6 +59,13 @@ class SinglePlayerViewController: UIViewController {
         }
     }
     
+    //MARK: - Sending score over to PostGameViewController
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let destinationVC = segue.destination as! PostGameViewController
+        destinationVC.finalScore = score
+    }
+    
     //MARK: - When the nextQuestion button is pressed
     @IBAction func answerButtom(_ sender: Any) {
         //this case is for the first 5 questions
@@ -78,11 +86,14 @@ class SinglePlayerViewController: UIViewController {
                 scoreLabel.text = String(score)
                 counter = 5
                 userAnswer.text = ""
+                
+                generator.impactOccurred()
+                
             }
             else{
                 //wrong sound
                 responseField.textColor = UIColor.red
-                generator.impactOccurred()
+                generator2.impactOccurred()
             }
         }
         else if(score >= 5 && score < 10){
@@ -103,10 +114,14 @@ class SinglePlayerViewController: UIViewController {
                 scoreLabel.text = String(score)
                 counter = 7
                 userAnswer.text = ""
+                
+                generator.impactOccurred()
+                
             }
             else{
                 //wrong sound
                 responseField.textColor = UIColor.red
+                generator2.impactOccurred()
             }
         }
         else if(score >= 10 && score < 20){
@@ -126,10 +141,13 @@ class SinglePlayerViewController: UIViewController {
                 scoreLabel.text = String(score)
                 counter = 10
                 userAnswer.text = ""
+                
+                generator.impactOccurred()
             }
             else{
                 //wrong sound
                 responseField.textColor = UIColor.red
+                generator2.impactOccurred()
             }
             
         }
@@ -150,10 +168,17 @@ class SinglePlayerViewController: UIViewController {
                 scoreLabel.text = String(score)
                 counter = 5
                 userAnswer.text = ""
+                
+                sign = "x"
+                symbol.text = sign
+                
+                generator.impactOccurred()
+                
             }
             else{
                 //wrong sound
                 responseField.textColor = UIColor.red
+                generator2.impactOccurred()
             }
         }
         else if(score >= 30 && score < 35){
@@ -173,10 +198,13 @@ class SinglePlayerViewController: UIViewController {
                 scoreLabel.text = String(score)
                 counter = 10
                 userAnswer.text = ""
+                
+                generator.impactOccurred()
             }
             else{
                 //wrong sound
                 responseField.textColor = UIColor.red
+                generator2.impactOccurred()
             }
         }
         else if(score >= 35 && score < 45){
@@ -196,10 +224,13 @@ class SinglePlayerViewController: UIViewController {
                 scoreLabel.text = String(score)
                 counter = 12
                 userAnswer.text = ""
+                
+                generator.impactOccurred()
             }
             else{
                 //wrong sound
                 responseField.textColor = UIColor.red
+                generator2.impactOccurred()
             }
         }
         else if(score >= 45){
@@ -219,10 +250,13 @@ class SinglePlayerViewController: UIViewController {
                 scoreLabel.text = String(score)
                 counter = 15
                 userAnswer.text = ""
+                
+                generator.impactOccurred()
             }
             else{
                 //wrong sound
                 responseField.textColor = UIColor.red
+                generator2.impactOccurred()
             }
         }
     }
