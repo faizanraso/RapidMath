@@ -64,6 +64,7 @@ class SinglePlayerViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let destinationVC = segue.destination as! PostGameViewController
         destinationVC.finalScore = score
+        userAnswer.text = ""
     }
     
     //MARK: - When the nextQuestion button is pressed
