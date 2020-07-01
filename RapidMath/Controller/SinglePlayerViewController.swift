@@ -11,6 +11,9 @@ import UIKit
 
 class SinglePlayerViewController: UIViewController {
     
+    let defaults = UserDefaults.standard
+    var highScore = 0
+    
     @IBOutlet weak var scoreLabel: UILabel!
     @IBOutlet weak var time: UILabel!
     @IBOutlet weak var topNumber: UILabel!
@@ -34,7 +37,7 @@ class SinglePlayerViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationItem.setHidesBackButton(true, animated: false)
-
+        
         scoreLabel.text = String(score)
         time.text = "5"
         symbol.text = sign
@@ -64,6 +67,7 @@ class SinglePlayerViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let destinationVC = segue.destination as! PostGameViewController
         destinationVC.finalScore = score
+        destinationVC.highScore = highScore
         userAnswer.text = ""
     }
     

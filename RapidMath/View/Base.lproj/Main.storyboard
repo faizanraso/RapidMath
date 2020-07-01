@@ -38,7 +38,7 @@
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="clipsToBounds" value="YES"/>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <segue destination="knN-pQ-ymP" kind="show" id="eKw-96-hrD"/>
+                                    <segue destination="knN-pQ-ymP" kind="show" identifier="startGame" id="eKw-96-hrD"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P3f-CY-JGb">
@@ -102,6 +102,7 @@
                     <navigationItem key="navigationItem" id="HAY-Nz-HOS"/>
                     <splitViewDetailSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <connections>
+                        <outlet property="highScoreLabel" destination="P3f-CY-JGb" id="fet-7a-86k"/>
                         <outlet property="singlePlayerButton" destination="iwJ-pf-63y" id="i0j-ZD-Bav"/>
                     </connections>
                 </viewController>
@@ -321,6 +322,7 @@
                     <navigationItem key="navigationItem" id="ulm-Tl-jPo"/>
                     <connections>
                         <outlet property="finalScoreText" destination="uKS-Ev-YfR" id="LAr-8X-aua"/>
+                        <outlet property="highScoreLabel" destination="Nq6-z0-XKe" id="v74-4B-gYw"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="P5K-OM-Fju" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
