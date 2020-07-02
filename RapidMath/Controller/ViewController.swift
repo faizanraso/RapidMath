@@ -22,7 +22,6 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view.
         navigationController?.isNavigationBarHidden = true
         
-        
         //user defaults
         highScore = defaults.integer(forKey: "HIGHSCORE")
         if (defaults.integer(forKey: "HIGHSCORE") as? Int) != nil{

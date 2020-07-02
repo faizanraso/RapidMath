@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import AVFoundation
 
 class SinglePlayerViewController: UIViewController {
     
@@ -45,6 +46,25 @@ class SinglePlayerViewController: UIViewController {
         topNumber.text = String(topNum)
         bottomNumber.text = String(bottomNum)
         timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(updateCounter), userInfo: nil, repeats: true)
+    }
+    
+    //MARK: - Sound Effects
+    
+    var player: AVAudioPlayer!
+    var player2: AVAudioPlayer!
+    
+    func playSound() {
+        let url = Bundle.main.url(forResource: "dingSound", withExtension: "mp3")
+        player = try! AVAudioPlayer(contentsOf: url!)
+        player.play()
+                
+    }
+    
+    func playSound2() {
+        let url = Bundle.main.url(forResource: "wrongSound", withExtension: "mp3")
+        player2 = try! AVAudioPlayer(contentsOf: url!)
+        player2.play()
+                
     }
     
     
@@ -98,6 +118,7 @@ class SinglePlayerViewController: UIViewController {
                 counter = 5
                 userAnswer.text = ""
                 
+                playSound()
                 generator.impactOccurred()
                 
             }
@@ -105,6 +126,7 @@ class SinglePlayerViewController: UIViewController {
                 //wrong sound
                 responseField.textColor = UIColor.red
                 generator2.impactOccurred()
+                playSound2()
             }
         }
         else if(score >= 4 && score < 9){
@@ -130,6 +152,7 @@ class SinglePlayerViewController: UIViewController {
                 counter = 7
                 userAnswer.text = ""
                 
+                playSound()
                 generator.impactOccurred()
                 
             }
@@ -137,6 +160,7 @@ class SinglePlayerViewController: UIViewController {
                 //wrong sound
                 responseField.textColor = UIColor.red
                 generator2.impactOccurred()
+                playSound2()
             }
         }
         else if(score >= 9 && score < 14){
@@ -162,13 +186,14 @@ class SinglePlayerViewController: UIViewController {
                  counter = 7
                  userAnswer.text = ""
          
-                
+                playSound()
                 generator.impactOccurred()
             }
             else{
                 //wrong sound
                 responseField.textColor = UIColor.red
                 generator2.impactOccurred()
+                playSound2()
             }
             
         }
@@ -196,7 +221,7 @@ class SinglePlayerViewController: UIViewController {
                 counter = 10
                 userAnswer.text = ""
 
-                
+                playSound()
                 generator.impactOccurred()
                 
             }
@@ -204,6 +229,7 @@ class SinglePlayerViewController: UIViewController {
                 //wrong sound
                 responseField.textColor = UIColor.red
                 generator2.impactOccurred()
+                playSound2()
             }
         }
         else if(score >= 19 && score < 24){
@@ -218,8 +244,8 @@ class SinglePlayerViewController: UIViewController {
                 //one digit by two digit multiplication
                 
                 //set the new values for the numbers
-                topNum = Int.random(in: 0..<9)
-                bottomNum = Int.random(in: 0..<99)
+                topNum = Int.random(in: 0..<99)
+                bottomNum = Int.random(in: 0..<9)
                 answer = topNum * bottomNum
                 //display the new question
                 topNumber.text = String(topNum)
@@ -231,11 +257,13 @@ class SinglePlayerViewController: UIViewController {
                 userAnswer.text = ""
                 
                 generator.impactOccurred()
+                playSound()
             }
             else{
                 //wrong sound
                 responseField.textColor = UIColor.red
                 generator2.impactOccurred()
+                playSound2()
             }
         }
         else if(score >= 24 && score < 29){
@@ -260,12 +288,14 @@ class SinglePlayerViewController: UIViewController {
                 counter = 15
                 userAnswer.text = ""
                 
+                playSound()
                 generator.impactOccurred()
             }
             else{
                 //wrong sound
                 responseField.textColor = UIColor.red
                 generator2.impactOccurred()
+                playSound2()
             }
         }
         else if(score >= 29){
@@ -291,11 +321,13 @@ class SinglePlayerViewController: UIViewController {
                 userAnswer.text = ""
 
                 generator.impactOccurred()
+                playSound()
             }
             else{
                 //wrong sound
                 responseField.textColor = UIColor.red
                 generator2.impactOccurred()
+                playSound2()
             }
         }
     }
@@ -306,5 +338,14 @@ class SinglePlayerViewController: UIViewController {
         responseField.becomeFirstResponder()
     }
     
-    
+    //MARK: - Getting rid of navigation controller
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.setNavigationBarHidden(true, animated: animated)
+    }
+
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        navigationController?.setNavigationBarHidden(false, animated: animated)
+    }
 }
