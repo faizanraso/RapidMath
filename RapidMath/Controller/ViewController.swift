@@ -40,11 +40,10 @@ class ViewController: UIViewController {
         navigationController?.isNavigationBarHidden = false
     }
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let destinationVC = segue.destination as! SinglePlayerViewController
-        destinationVC.highScore = highScore
-        
-    }
+    
+    
+    
+    
 }
 
 

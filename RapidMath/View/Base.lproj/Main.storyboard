@@ -60,7 +60,7 @@
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="291" id="rJc-kf-lD2"/>
                                     <constraint firstAttribute="width" constant="291" id="w8u-cm-fSc"/>
                                 </constraints>
-                                <state key="normal" title="MORE COMING">
+                                <state key="normal" title="TRAINING MODE">
                                     <color key="titleColor" red="0.090196078430000007" green="0.1333333333" blue="0.23137254900000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <userDefinedRuntimeAttributes>
@@ -69,6 +69,9 @@
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="clipsToBounds" value="YES"/>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="trainingButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="w6B-XD-cdw"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="High Score:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tNO-3f-pHL">
                                 <rect key="frame" x="309" y="103" width="76" height="17"/>
@@ -83,14 +86,33 @@
                                     <constraint firstAttribute="height" constant="154" id="rjM-6S-zUc"/>
                                 </constraints>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oe8-X7-Vvr">
+                                <rect key="frame" x="61.5" y="654.5" width="291" height="91"/>
+                                <color key="backgroundColor" red="1" green="0.4039215686" blue="0.40784313729999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="91" id="a9L-I3-xwl"/>
+                                    <constraint firstAttribute="width" constant="291" id="hJR-lX-7ok"/>
+                                </constraints>
+                                <state key="normal" title="HIGH SCORES">
+                                    <color key="titleColor" red="0.090196078430000007" green="0.1333333333" blue="0.23137254900000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="50"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="clipsToBounds" value="YES"/>
+                                </userDefinedRuntimeAttributes>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.090196078430000007" green="0.1333333333" blue="0.23137254900000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="Se8-iv-pML" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="3dQ-xh-K47"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="P3f-CY-JGb" secondAttribute="trailing" constant="15" id="4S8-Cf-khf"/>
                             <constraint firstItem="Se8-iv-pML" firstAttribute="top" secondItem="tNO-3f-pHL" secondAttribute="bottom" constant="45" id="9sp-JA-eGi"/>
+                            <constraint firstItem="oe8-X7-Vvr" firstAttribute="top" secondItem="3eG-O3-bMM" secondAttribute="bottom" constant="35" id="JKk-qr-Bub"/>
                             <constraint firstItem="3eG-O3-bMM" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="MjF-zo-RBc"/>
                             <constraint firstItem="P3f-CY-JGb" firstAttribute="leading" secondItem="tNO-3f-pHL" secondAttribute="trailing" constant="5" id="NSn-uv-OxA"/>
+                            <constraint firstItem="oe8-X7-Vvr" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="YWp-oD-9x3"/>
                             <constraint firstItem="3eG-O3-bMM" firstAttribute="top" secondItem="iwJ-pf-63y" secondAttribute="bottom" constant="35" id="bwZ-94-tyD"/>
                             <constraint firstItem="P3f-CY-JGb" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="15" id="fXR-xL-bTJ"/>
                             <constraint firstItem="tNO-3f-pHL" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="15" id="gOv-vB-uhH"/>
@@ -243,6 +265,83 @@
             </objects>
             <point key="canvasLocation" x="2156.521739130435" y="-353.57142857142856"/>
         </scene>
+        <!--Training Mode Selection View Controller-->
+        <scene sceneID="HbG-kV-PNB">
+            <objects>
+                <viewController id="dHe-Qu-MUM" customClass="TrainingModeSelectionViewController" customModule="RapidMath" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="eK4-Yw-B9n">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mgv-Pd-t0e">
+                                <rect key="frame" x="61.5" y="266.5" width="291" height="91"/>
+                                <color key="backgroundColor" red="1" green="0.4039215686" blue="0.40784313729999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="291" id="Ci9-zQ-2JP"/>
+                                    <constraint firstAttribute="height" constant="91" id="kH8-Tl-nJH"/>
+                                </constraints>
+                                <state key="normal" title="ADDITION">
+                                    <color key="titleColor" red="0.090196078430000007" green="0.1333333333" blue="0.23137254900000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="50"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="clipsToBounds" value="YES"/>
+                                </userDefinedRuntimeAttributes>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="N0e-B5-blS">
+                                <rect key="frame" x="61.5" y="402.5" width="291" height="91"/>
+                                <color key="backgroundColor" red="1" green="0.4039215686" blue="0.40784313729999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="91" id="joO-As-XT4"/>
+                                    <constraint firstAttribute="width" constant="291" id="rxB-ml-yke"/>
+                                </constraints>
+                                <state key="normal" title="SUBTRACTION">
+                                    <color key="titleColor" red="0.090196078430000007" green="0.1333333333" blue="0.23137254900000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="50"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="clipsToBounds" value="YES"/>
+                                </userDefinedRuntimeAttributes>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Nj-X4-efo">
+                                <rect key="frame" x="61.5" y="538.5" width="291" height="91"/>
+                                <color key="backgroundColor" red="1" green="0.4039215686" blue="0.40784313729999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="91" id="0vg-yS-4yn"/>
+                                    <constraint firstAttribute="width" constant="291" id="qa3-43-zYn"/>
+                                </constraints>
+                                <state key="normal" title="MULTIPLICATION">
+                                    <color key="titleColor" red="0.090196078430000007" green="0.1333333333" blue="0.23137254900000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="50"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="clipsToBounds" value="YES"/>
+                                </userDefinedRuntimeAttributes>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.090196078430000007" green="0.1333333333" blue="0.23137254900000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="Mgv-Pd-t0e" firstAttribute="centerX" secondItem="eK4-Yw-B9n" secondAttribute="centerX" id="1ha-WU-Ymz"/>
+                            <constraint firstItem="N0e-B5-blS" firstAttribute="centerX" secondItem="eK4-Yw-B9n" secondAttribute="centerX" id="MQe-p4-ePb"/>
+                            <constraint firstItem="9Nj-X4-efo" firstAttribute="top" secondItem="N0e-B5-blS" secondAttribute="bottom" constant="45" id="Z1n-6h-579"/>
+                            <constraint firstItem="9Nj-X4-efo" firstAttribute="centerX" secondItem="eK4-Yw-B9n" secondAttribute="centerX" id="auH-w6-rpc"/>
+                            <constraint firstItem="N0e-B5-blS" firstAttribute="centerY" secondItem="eK4-Yw-B9n" secondAttribute="centerY" id="fKr-n3-muM"/>
+                            <constraint firstItem="N0e-B5-blS" firstAttribute="top" secondItem="Mgv-Pd-t0e" secondAttribute="bottom" constant="45" id="s89-26-YSI"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="ELN-TW-z22"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="Ef6-s3-gBp"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9KC-A4-Q08" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2157" y="439"/>
+        </scene>
         <!--Post Game View Controller-->
         <scene sceneID="RvC-hf-6Or">
             <objects>
@@ -327,7 +426,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="P5K-OM-Fju" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3013.04347826087" y="168.75"/>
+            <point key="canvasLocation" x="3051" y="-104"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Ar0-Yr-bgt">
@@ -353,6 +452,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
+        <segue reference="eKw-96-hrD"/>
         <segue reference="7Oi-HS-ca0"/>
     </inferredMetricsTieBreakers>
     <resources>

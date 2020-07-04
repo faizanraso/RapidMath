@@ -17,6 +17,7 @@
 		99152AA5249FC6DA007B3C85 /* SinglePlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99152AA4249FC6DA007B3C85 /* SinglePlayerViewController.swift */; };
 		99BB33B424AD901F00E9D644 /* dingSound.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 99BB33B324AD901F00E9D644 /* dingSound.mp3 */; };
 		99BB33B624AD902900E9D644 /* wrongSound.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 99BB33B524AD902900E9D644 /* wrongSound.mp3 */; };
+		99BB33B824AF5F8E00E9D644 /* TrainingModeSelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99BB33B724AF5F8E00E9D644 /* TrainingModeSelectionViewController.swift */; };
 		99C50D7024A59895004189F6 /* PostGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99C50D6F24A59895004189F6 /* PostGameViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -33,6 +34,7 @@
 		99152AA4249FC6DA007B3C85 /* SinglePlayerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SinglePlayerViewController.swift; sourceTree = "<group>"; };
 		99BB33B324AD901F00E9D644 /* dingSound.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = dingSound.mp3; sourceTree = SOURCE_ROOT; };
 		99BB33B524AD902900E9D644 /* wrongSound.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = wrongSound.mp3; sourceTree = SOURCE_ROOT; };
+		99BB33B724AF5F8E00E9D644 /* TrainingModeSelectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainingModeSelectionViewController.swift; sourceTree = "<group>"; };
 		99C50D6F24A59895004189F6 /* PostGameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PostGameViewController.swift; path = RapidMath/Controller/PostGameViewController.swift; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
@@ -109,6 +111,7 @@
 			children = (
 				99152A8C249FAC39007B3C85 /* ViewController.swift */,
 				99152AA4249FC6DA007B3C85 /* SinglePlayerViewController.swift */,
+				99BB33B724AF5F8E00E9D644 /* TrainingModeSelectionViewController.swift */,
 				99C50D6F24A59895004189F6 /* PostGameViewController.swift */,
 			);
 			path = Controller;
@@ -190,6 +193,7 @@
 			files = (
 				99152A8D249FAC39007B3C85 /* ViewController.swift in Sources */,
 				99152A89249FAC39007B3C85 /* AppDelegate.swift in Sources */,
+				99BB33B824AF5F8E00E9D644 /* TrainingModeSelectionViewController.swift in Sources */,
 				99152AA5249FC6DA007B3C85 /* SinglePlayerViewController.swift in Sources */,
 				99C50D7024A59895004189F6 /* PostGameViewController.swift in Sources */,
 				99152A8B249FAC39007B3C85 /* SceneDelegate.swift in Sources */,
