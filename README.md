@@ -4,4 +4,4 @@ users to answer basic math problems including addition and multiplication in a c
 to answer the question.
 
 
-![](mainScreen)
+![](mainScreen.png), ![](InGame.png), ![](gameOver.png)
