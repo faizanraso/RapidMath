@@ -4,4 +4,4 @@ This app is a personal project designed to use various elements of Swift learned
 
 
 
-![](mainScreen.png), ![](InGame.png), ![](gameOver.png)
+![](screenshot_mainScreen.png), ![](screenshot_inGame.png), ![](screenshot_gameOver.png)
